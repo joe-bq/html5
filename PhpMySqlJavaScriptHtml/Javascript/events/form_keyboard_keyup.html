@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<title>Hover</title>
+<script type="text/javascript" src="../jquery/jquery-2.1.1.js">
+<!-- <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.1.min.js"> -->
+</script>
+<style type="text/css">
+.box {
+	margin: 50px;
+	padding: 30px;
+	width: 50px;
+	border: 3px solid black;
+}
+.colorBox {
+	background-color: #abacab;
+}
+</style>
+</head>
+<body>
+<h1>Keyup</h1>
+<form action="#">
+<textarea rows="10" cols="20" id="message" name="message">
+</textarea>
+<p>Characters remaining: <span id="remaining">50</span></p>
+</form>
+
+<script type="text/javascript">
+	$(document).ready(function() { 
+		var maxCharacters = 50;
+		$("#message").on("keyup", function() { 
+			var currentVal = $("#message").val().length;
+			var totalRemaining = maxCharacters - currentVal;
+			$("#remaining").text(totalRemaining);
+		});
+	});
+</script>
+
+</body>
+</html>

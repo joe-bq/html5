@@ -1,0 +1,5 @@
+<?php 
+
+// the PEAR way 
+// 
+?>

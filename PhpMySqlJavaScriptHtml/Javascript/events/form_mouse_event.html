@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+<title>A Basic Form</title>
+<script type="text/javascript" src="../jquery/jquery-2.1.1.js">
+</script>
+<style type="text/css">
+.form-field {
+	clear: both;
+	padding: 10px;
+	width: 350px;
+}
+.form-field label {
+	float: left;
+	width: 150px;
+	text-align: right;
+}
+
+.form-field input { 
+	float: right;
+	width: 150px;
+	text-align: left;
+}
+
+#submit { 
+	text-align: center;
+}
+
+</style>
+
+</head>
+
+<body>
+	<h1>A basic Form</h1>
+	<hr>
+
+	<form action="#">
+<fieldset>
+<legend>Car Trim and Package Information</legend>
+<div class="form-field">
+<div>Package: </div>
+<input id="plain" type="radio" name="trim" value="plain">
+<label for="plain">Plain</label>
+<input id="deluxe" type="radio" name="trim" value="deluxe">
+<label for="deluxe">Deluxe</label>
+<input id="custom" type="radio" name="trim" value="custom">
+<label for="custom">Custom</label>
+</div>
+<div class="form-field">
+<div>Extra Options:</div>
+<input type="checkbox" id="foglights" name="option" value="foglights">
+<label for="foglights">Fog Lights</label>
+<input type="checkbox" id="leather" name="option" value="leather">
+<label for="leather">Leather</label>
+<input type="checkbox" id="dvd" name="option" value="dvd">
+<label for="dvd">DVD</label>
+</div>
+<div class="form-field">
+<input id="submit" type="submit" name="submit" value="Send Form">
+</div>
+</fieldset>
+</form>
+
+<script type="text/javascript">
+
+	function checkElement(element) { 
+		if (element == undefined) { 
+			alert("undefined");
+		}
+		else if (element == "") { 
+			alert("empty");
+		} else {
+			alert("hello")
+			if (element.innerHTML == undefined) {
+				alert("inner undefined");
+			} else {
+				if (element.innerHTML !== "") { 
+					alert(element.innerHTML);
+				} else 	{
+					alert("&lt;" + element.name + "&gt;");
+				}	
+			}
+			
+		}
+	}
+
+
+	function dummy() { 
+
+	}
+	$(document).ready(function() { 
+		$("input[name='trim']").click(function(event) { 
+			if($(this).val() == "deluxe") {
+				$("input[name='option']").attr("checked", true);
+			} else if($(this).val() == "plain") { 
+				$("input[name='option']").attr("checked", false);
+			}
+		});
+
+		$("input[name='option']").click(function(event) {
+			$("#custom").attr("checked", "checked");;
+		});
+	});
+</script>
+
+</body>
+
+</html>

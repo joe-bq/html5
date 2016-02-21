@@ -1,0 +1,1 @@
+the Command Pattern aims to encapsulate method invocation, requests or operations into a single object and gives us the ability to both parameterize and pass methods call around that can be executed at our discretiohn.

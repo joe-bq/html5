@@ -1,0 +1,33 @@
+<!doctype html>
+
+<html>
+	<head>
+		<title>Javascriupt Chapter 2</title>
+	</head>
+	<h1>Here's another basic page</h1>
+	<script type="text/javascript">
+		// Define the function 
+		function addNumbers(num1, num2) {
+			var result = num1 + num2;
+			return result;
+		}
+
+		// Call the function 
+		var myResult = addNumbers(49, 2);
+
+
+		var ball = {
+			"color" : "white",
+			"type": "baseball",
+
+		};
+
+		ball.weight = 15;
+
+		for (var prop in  ball) { 
+			alert(ball[prop]);
+		}
+		
+		alert(ball.color);
+	</script>
+</html>

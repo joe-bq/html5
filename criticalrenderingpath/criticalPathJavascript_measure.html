@@ -1,0 +1,34 @@
+<!-- criticalPathJavascript_measure.html 
+
+
+neasure of the critical path. That is the exactly what the navigation Timing API provides.
+
+-->
+
+ <html>
+   <head>
+     <title>Critical Path: Measure</title>
+     <meta name="viewport" content="width=device-width,initial-scale=1">
+     <link href="style.css" rel="stylesheet">
+
+     <script type="text/javascript">
+
+     function measureCRP() { 
+ 			var t = window.performance.timing,
+              interactive = t.domInteractive - t.domLoading,
+              dcl = t.domContentLoadedEventStart - t.domLoading,
+              complete = t.domComplete - t.domLoading;
+
+     	var stats = document.createElement('p');
+     	stats.textContent = 'interactive: ' + interactive + 'ms, ' + 'dcl: ' + dcl + 'ms, complete: ' + complete + 'ms';
+     	document.body.appendChild(stats);
+     }
+     </script>
+  </head>
+
+
+  <body onload="measureCRP()">
+  	<p>hello <span>Web Performance</span> students! </p>
+  	<div><img src="awesome-photo.jpg"></div>
+  </body
+ </html>

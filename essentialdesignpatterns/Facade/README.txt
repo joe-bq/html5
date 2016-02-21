@@ -1,0 +1,1 @@
+this is about the Facade Pattern, the design pattern which aims to hide the details from the users and provide a simplified interfaces.

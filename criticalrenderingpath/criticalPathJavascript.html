@@ -1,0 +1,38 @@
+<!--
+
+renderingPathJavascript.html
+
+Conclusion:
+1.     executing our inline script blocks DOM construction, which will also delay the initial render.
+2.     the browser will delay script execution until it has finished downloading and constructing the CSSOM, and while we’re waiting, the DOM construction is also blocked!
+
+and the official notes on the rendering from : https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript
+
+01 location of the script in the document is significant.
+02 DOM construction is paused when a script tag is encountered and until the script has finished executing.
+03 JavaScript can query and modify the DOM and CSSOM.
+03 JavaScript execution is delayed until the CSSOM is ready.
+
+-->
+
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<link href="style.css" rel="stylesheet">
+		<title>Critical Path: Script</title>
+	</head>
+	<body>
+		<p>Hello<span>web performance</span> Students </p>
+		<div> <img src="awesome-photo.jpg"></div>
+		<script type="text/javascript">
+		var span = document.getElementsByTagName('span')[0];
+		span.textContent = ' iteractive'; // change DOM text content
+		span.style.display = 'inline';
+		// create a new element, style it and append it to the DOM
+		var loadTime = document.createElement('div');
+		loadTime.textContent = 'You loaded this page on: ' + new Date();
+		loadTime.style.color = 'blue';
+		document.body.appendChild(loadTime);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<!-- 
+
+
+MVVM_eg_TodoView.html
+	In this example, we will show a simple example on defining a View to collect and display the TodoView for the MVVM with the KnockoutJS framework.
+
+
+Requirements:
+this requires the following 
+
+	jQuery.js
+	Underscore.js
+	Backbone.js
+	KnockoutJS
+
+Define a view in html that works with the ViewModel to show how to use the MVVM pattern.
+
+
+
+-->
+
+
+<div id="todoapp">
+	<header>
+		<h1>Todos</h1>
+		<input id="new-todo" type="text" data-bind="value: current, valueUpdate: 'afterkeydown', enterKey: add" placeholder="What need to be done?" />
+	</header>
+
+	<section id="main" data-bind="block: todos().length">
+		<input id="toggle-all" type="checkbox" data-bind="checked: allCompleted">
+		<label for="toggle-all">Mark all as complete</label>
+		<ul id="todo-list" data-bind="foreach: todos">
+		<!-- item -->
+			<li data-bind="css: {done: done, editing: editing }">
+				<div class="view" data-bind="event: { dbclick: $root.editItem }">
+					<input class="toggle" type="checkbox" data-bind="checked: done"></input>
+					<label data-bind="text: content"></label>
+					<a class="destroy" href="#" data-bind="click: $root.remove"></a>
+				</div>
+				<!-- the following show a $ variable and there are more event/triggers type of things that are involved below.-->
+				<input class="edit" type="text"
+                       data-bind="value: content, valueUpdate: 'afterkeydown', enterKey: $root.stopEditing, selectAndFocus: editing, event: { blur: $root.stopEditing }" />
+			</li>
+		</ul>
+	</section>
+</div>

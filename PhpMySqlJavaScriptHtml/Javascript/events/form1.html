@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+<title>A Basic Form</title>
+<script type="text/javascript" src="../jquery/jquery-2.1.1.js">
+
+<!-- 
+/*
+$(document).ready(function() {
+	$("form").submit(function(event) {
+		alert("You submitted the form");
+		event.preventDefault();
+		return false;
+	});
+});
+*/
+
+/*
+	$(document).ready(function() {
+		$("form").submit(function() {
+		alert("You submitted the form");
+		return false;
+		});
+	});
+*/
+/*
+	$(document).ready(function() {
+		$("form").submit(function() {
+			alert("You submitted the form");
+			return false;
+		});
+	 });
+*/	 
+</script>
+
+<script type="text/javascript">
+   /* different type of browser may have different behavior, but it is not allowed in the Chrome to have hte 
+   inline javascript code teogether with an external linked javascript */
+
+   /*
+	$(document).ready(function() { 
+		$("form").submit(function() {
+			alert("You submitted the form");
+			return false;
+		});
+	});
+  */
+
+  $(document).ready(function() {
+	$("form").submit(function(event) {
+			alert("You submitted the form");
+			event.preventDefault();
+			return false;
+		});
+	});
+
+</script>
+
+<style type="text/css">
+.form-field {
+	clear: both;
+	padding: 10px;
+	width: 350px;
+}
+.form-field label {
+	float: left;
+	width: 150px;
+	text-align: right;
+}
+.form-field input {
+	float: right;
+	width: 150px;
+	text-align: left;
+}
+#submit {
+	text-align: center;
+}
+</style>
+</head>
+
+<body>
+<h1 id=>A Basic Form</h1>
+<hr>
+<form action="#">
+<fieldset>
+	<legend>Form Information</legend>
+	<div class="form-field">
+		<label for="username">Name:</label>
+		<input type="text" id="username" name="username">
+	</div>
+	<div class="form-field">
+		<label for="email">E-mail Address:</label>
+		<input type="text" id="username" name="email">
+	</div>
+	<div class="form-field">
+		<input id="submit" type="submit" name="submit" value="Send Form">
+	</div>
+</fieldset>
+</form>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!-- 
+
+
+MVVM_prep_View.html
+	In this example, we will show a simple example on defining a View with the KnockoutJS framework.
+
+
+Requirements:
+this requires the following 
+
+	jQuery.js
+	Underscore.js
+	Backbone.js
+	KnockoutJS
+
+Define a view in html that works with the ViewModel to show how to use the MVVM pattern.
+
+
+
+-->
+
+
+<p><input id="source" data-bind="value: contactName, valueUpdate: 'keyup'" /></p>
+<div data-bind="visible: contactName().length > 10)">
+	You have a really long name!
+</div>
+
+<p>Contact name: <strong data-bind="text: contactName"></strong></p>
