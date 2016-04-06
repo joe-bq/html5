@@ -1,6 +1,6 @@
 /**
 
-Author: wangboqi
+Author: joe
 
 description:
 this page will show you how to use node js sever and how to run it 
